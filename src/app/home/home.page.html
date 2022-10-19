@@ -1,20 +1,20 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content>
+  <div *ngFor="let task of taskList">
+    <p>{{task.title}}</p>
   </div>
+
+
+
+  <!-- <div *ngIf="postList">
+    <div *ngFor="let post of postList">
+        <p>{{post.postText}}</p>
+        <p *ngIf="currentUser.userId == post.ownerId">Posted by <a [routerLink]="['/profilepage/', currentUser.userId]">{{currentUser.userName}}</a> on {{post.createdOn}}</p>
+        <p *ngIf="currentUser.userId != post.ownerId">Posted by {{post.ownerId}} on {{post.createdOn}}</p>
+        <p *ngIf="currentUser.userId == post.ownerId"><a [routerLink]="['/edit', post.postId]">Edit Post</a><button (click)="onDelete(post.postId)">Delete Post</button></p>
+    </div>
+</div>  -->
 </ion-content>
